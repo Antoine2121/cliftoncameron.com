@@ -24,7 +24,9 @@
     --plum:     #4d1a2b;
   }
   *{box-sizing:border-box; -webkit-font-smoothing: antialiased;}
+  html{scroll-behavior: smooth;}
   html,body{margin:0; padding:0; background:var(--cream); color:var(--ink); overflow-x:hidden;}
+  section, header.hero, footer{scroll-margin-top: 70px;}
   body{
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 16.5px; line-height: 1.6;
@@ -194,6 +196,19 @@
     .hero-grid{grid-template-columns: 1fr; gap: 60px;}
     .photo-stack{max-width:420px; margin: 0 auto;}
   }
+  @media (max-width:600px){
+    .hero h1{
+      font-size: clamp(44px, 12vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+    }
+    .hero h1 .l1, .hero h1 .l2, .hero h1 .l3{
+      display: inline; margin: 0;
+    }
+    .topbar .brand{ font-size: 16px; }
+    .topbar .pill{ padding: 7px 12px; font-size: 10px; letter-spacing: 0.14em; }
+    .topbar .row{ gap: 12px; padding: 12px 18px; }
+  }
 
   /* ============== SECTION HELPERS ============== */
   section{position:relative; padding: 110px 0; border-bottom: 1.5px solid var(--ink); overflow:hidden;}
@@ -329,7 +344,12 @@
 
   /* ============== VIDEOS ============== */
   .videos{display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px;}
-  .v{position:relative; overflow:hidden; border:1.5px solid var(--ink); background: var(--ink);}
+  .v{position:relative; overflow:hidden; border:1.5px solid var(--ink); background: var(--ink); cursor:pointer;}
+  .v .card-link{
+    position:absolute; inset:0; z-index:10;
+    overflow:hidden; text-indent:-9999px;
+    border:0; background:transparent;
+  }
   .v .thumb{
     position:relative;
     aspect-ratio: 16/9;
@@ -337,10 +357,10 @@
     transition: transform .4s ease;
   }
   .v:hover .thumb{transform: scale(1.05);}
-  .v .thumb a{position:absolute; inset:0;}
   .v .thumb:after{
     content:""; position:absolute; inset:0;
     background: linear-gradient(180deg, transparent 40%, rgba(20,11,8,.85));
+    pointer-events:none;
   }
   .v .play{
     position:absolute; left:14px; bottom:14px; z-index:2;
@@ -355,9 +375,8 @@
     padding: 14px 16px; background: var(--paper); border-top:1.5px solid var(--ink);
   }
   .v .tag{font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-d);}
-  .v h4{font-family:'Fraunces', serif; font-weight: 500; font-size: 17px; margin: 6px 0 0; line-height: 1.2; color: var(--ink); letter-spacing:-0.01em;}
-  .v a.title{color: var(--ink);}
-  .v a.title:hover{color: var(--orange-d);}
+  .v h4{font-family:'Fraunces', serif; font-weight: 500; font-size: 17px; margin: 6px 0 0; line-height: 1.2; color: var(--ink); letter-spacing:-0.01em; transition: color .2s ease;}
+  .v:hover h4{color: var(--orange-d);}
   @media (max-width:1100px){ .videos{grid-template-columns: repeat(3, 1fr);} }
   @media (max-width:760px){ .videos{grid-template-columns: repeat(2, 1fr);} }
   @media (max-width:520px){ .videos{grid-template-columns: 1fr;} }
@@ -679,134 +698,134 @@
 
     <div class="videos">
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener" aria-label="A Night of Serge Modular"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/isn1i_WDn_w/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener" aria-label="Serge Modular night"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Live · Coaxial</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener">A Night of Serge Modular</a></h4>
+          <h4>A Night of Serge Modular</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=MFYpife-rVo" target="_blank" rel="noopener" aria-label="Synthplex Presenters Feature"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/MFYpife-rVo/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=MFYpife-rVo" target="_blank" rel="noopener" aria-label="Synthplex feature"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Industry · Synthplex</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=MFYpife-rVo" target="_blank" rel="noopener">Synthplex Presenters Feature</a></h4>
+          <h4>Synthplex Presenters Feature</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=m3CfoopRBxE" target="_blank" rel="noopener" aria-label="Haken Continuum at NAMM"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/m3CfoopRBxE/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=m3CfoopRBxE" target="_blank" rel="noopener" aria-label="Haken Continuum"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Demo · NAMM</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=m3CfoopRBxE" target="_blank" rel="noopener">Haken Continuum at NAMM</a></h4>
+          <h4>Haken Continuum at NAMM</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=epo9FEQzZ44" target="_blank" rel="noopener" aria-label="Clifton Cameron at EoWave"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/epo9FEQzZ44/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=epo9FEQzZ44" target="_blank" rel="noopener" aria-label="Clifton at EoWave"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Performance</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=epo9FEQzZ44" target="_blank" rel="noopener">Clifton Cameron at EoWave</a></h4>
+          <h4>Clifton Cameron at EoWave</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=Nyn0s-8pwg8" target="_blank" rel="noopener" aria-label="Haken ContinuuMini"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Nyn0s-8pwg8/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=Nyn0s-8pwg8" target="_blank" rel="noopener" aria-label="Haken ContinuuMini"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Demo · NAMM</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=Nyn0s-8pwg8" target="_blank" rel="noopener">Haken ContinuuMini</a></h4>
+          <h4>Haken ContinuuMini</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=Nqij_mJ31C0&amp;t=262s" target="_blank" rel="noopener" aria-label="On Analogue Systems"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Nqij_mJ31C0/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=Nqij_mJ31C0&amp;t=262s" target="_blank" rel="noopener" aria-label="On Analogue Systems"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Conversation</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=Nqij_mJ31C0&amp;t=262s" target="_blank" rel="noopener">On Analogue Systems</a></h4>
+          <h4>On Analogue Systems</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=ojZwIlHKsm0" target="_blank" rel="noopener" aria-label="PSP Anniversary Wishes"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/ojZwIlHKsm0/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=ojZwIlHKsm0" target="_blank" rel="noopener" aria-label="PSP Anniversary"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Feature · PSP</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=ojZwIlHKsm0" target="_blank" rel="noopener">PSP Anniversary Wishes</a></h4>
+          <h4>PSP Anniversary Wishes</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=dBNuR6EEgRc&amp;t=1s" target="_blank" rel="noopener" aria-label="Martinic AX73 at East West"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/dBNuR6EEgRc/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=dBNuR6EEgRc&amp;t=1s" target="_blank" rel="noopener" aria-label="Martinic AX73"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Studio · East West</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=dBNuR6EEgRc&amp;t=1s" target="_blank" rel="noopener">Martinic AX73 at East West</a></h4>
+          <h4>Martinic AX73 at East West</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=MODmsmKZ1uQ" target="_blank" rel="noopener" aria-label="Quintessential: Influenced By Intensity"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/MODmsmKZ1uQ/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=MODmsmKZ1uQ" target="_blank" rel="noopener" aria-label="Influenced By Intensity"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Music · 2003</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=MODmsmKZ1uQ" target="_blank" rel="noopener">Quintessential: Influenced By Intensity</a></h4>
+          <h4>Quintessential: Influenced By Intensity</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/watch?v=Efh4Ucoa7Vk" target="_blank" rel="noopener" aria-label="Daedelus: Just Briefly"></a>
         <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Efh4Ucoa7Vk/hqdefault.jpg');">
-          <a href="https://www.youtube.com/watch?v=Efh4Ucoa7Vk" target="_blank" rel="noopener" aria-label="Daedelus"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Music</div>
-          <h4><a class="title" href="https://www.youtube.com/watch?v=Efh4Ucoa7Vk" target="_blank" rel="noopener">Daedelus: Just Briefly</a></h4>
+          <h4>Daedelus: Just Briefly</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener" aria-label="Selected work on Vimeo"></a>
         <div class="thumb" style="background:linear-gradient(135deg, var(--orange), var(--orange-d)); display:flex; align-items:center; justify-content:center;">
-          <a href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener" aria-label="Vimeo"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">Vimeo</div>
-          <h4><a class="title" href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener">Selected work on Vimeo</a></h4>
+          <h4>Selected work on Vimeo</h4>
         </div>
       </article>
 
       <article class="v">
+        <a class="card-link" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener" aria-label="@pendulumdistinction"></a>
         <div class="thumb" style="background:linear-gradient(135deg, var(--teal), var(--ink)); display:flex; align-items:center; justify-content:center;">
-          <a href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener" aria-label="YouTube channel"></a>
           <div class="play">▶</div>
         </div>
         <div class="meta">
           <div class="tag">YouTube</div>
-          <h4><a class="title" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener">@pendulumdistinction</a></h4>
+          <h4>@pendulumdistinction</h4>
         </div>
       </article>
     </div>
