@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Clifton Develle Cameron · Sound Designer · Modular Synthesist · Performer</title>
+<meta name="description" content="Clifton Develle Cameron, sound designer for Applied Acoustics Systems' Multiphonics CV-2, contributing writer at Synth and Software, modular performer and stage actor." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:    #f3ead6;
+    --paper:    #faf5e6;
+    --ink:      #140b08;
+    --ink-2:    #4a3a2e;
+    --rule:     #c8b89a;
+    --orange:   #e2521b;     /* drawn from his shirt */
+    --orange-d: #b73c12;
+    --gold:     #d8a23a;
+    --teal:     #1f5654;
+    --plum:     #4d1a2b;
+  }
+  *{box-sizing:border-box; -webkit-font-smoothing: antialiased;}
+  html,body{margin:0; padding:0; background:var(--cream); color:var(--ink); overflow-x:hidden;}
+  body{
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16.5px; line-height: 1.6;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0 0.02  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 200px 200px;
+  }
+  a{color:var(--ink); text-decoration:none;}
+  ::selection{background:var(--orange); color:var(--cream);}
+
+  h1,h2,h3,.serif{font-family:'Fraunces', Georgia, serif; font-weight:400; letter-spacing:-0.015em; line-height:0.95;}
+  .mono{font-family:'Space Mono', monospace;}
+  .label{
+    font-family:'Space Mono', monospace; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);
+  }
+  .container{max-width:1280px; margin:0 auto; padding:0 32px;}
+
+  /* ============== TOP BAR ============== */
+  .topbar{
+    border-bottom: 1.5px solid var(--ink);
+    background: var(--cream);
+    position: sticky; top:0; z-index:50;
+  }
+  .topbar .row{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding: 14px 32px;
+    max-width:1280px; margin:0 auto;
+  }
+  .topbar .brand{
+    font-family:'Fraunces', serif; font-size:20px; font-weight:500; letter-spacing:-0.01em;
+  }
+  .topbar .brand em{font-style:italic; color:var(--orange-d); font-weight:400;}
+  .topbar nav{display:flex; gap:22px;}
+  .topbar nav a{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; padding:6px 0; position:relative;
+  }
+  .topbar nav a:hover{color:var(--orange-d);}
+  .topbar .pill{
+    padding: 8px 16px; border:1.5px solid var(--ink);
+    border-radius: 999px; background: var(--ink); color: var(--cream);
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .topbar .pill:hover{background: var(--orange); border-color:var(--orange); color:var(--cream);}
+  @media (max-width:880px){ .topbar nav{display:none;} }
+
+  /* ============== MARQUEE ============== */
+  .marquee{
+    background: var(--ink); color: var(--cream);
+    border-bottom: 1.5px solid var(--ink);
+    overflow:hidden; white-space:nowrap;
+    padding: 14px 0;
+  }
+  .marquee .track{
+    display:inline-flex; gap: 48px; padding-right: 48px;
+    animation: scroll 38s linear infinite;
+    font-family:'Fraunces', serif; font-style: italic; font-size: 22px; font-weight: 400;
+  }
+  .marquee .track .star{color: var(--orange); font-style: normal;}
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ============== HERO ============== */
+  .hero{
+    position:relative;
+    padding: 80px 0 100px;
+    border-bottom: 1.5px solid var(--ink);
+    overflow:hidden;
+  }
+  .hero .container{position:relative; z-index:2;}
+  .hero .blob1, .hero .blob2{
+    position:absolute; border-radius:50%; filter: blur(80px); opacity: .55;
+    pointer-events:none; z-index:1;
+  }
+  .hero .blob1{width:520px; height:520px; background: var(--orange); right:-160px; top:-100px;}
+  .hero .blob2{width:420px; height:420px; background: var(--gold); left:-160px; bottom:-180px; opacity:.45;}
+
+  .hero-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center;
+  }
+  .hero h1{
+    font-size: clamp(72px, 12vw, 200px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    font-weight: 300;
+    margin: 24px 0 0;
+  }
+  .hero h1 .l1{display:block;}
+  .hero h1 .l2{display:block; font-style:italic; font-weight: 300; color: var(--orange-d); margin-left: 0.06em;}
+  .hero h1 .l3{display:block; margin-left: 0.16em;}
+  .hero .meta-line{
+    display:flex; align-items:center; gap: 14px; flex-wrap:wrap;
+    margin-top: 38px; padding-top: 22px;
+    border-top: 1.5px solid var(--ink);
+  }
+  .hero .meta-line span.dot{width:8px; height:8px; background: var(--orange); border-radius:50%; display:inline-block;}
+  .hero .lede{
+    margin-top: 28px;
+    font-family:'Fraunces', serif; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35;
+    max-width: 620px; color: var(--ink-2); font-weight: 400;
+  }
+  .hero .lede em{color: var(--orange-d); font-style: italic;}
+
+  /* hero photo stack */
+  .photo-stack{position:relative; padding: 20px; width:100%;}
+  .photo-frame{
+    position:relative;
+    background: var(--paper);
+    padding: 16px 16px 60px;
+    border: 1.5px solid var(--ink);
+    box-shadow: 14px 14px 0 var(--ink);
+    transform: rotate(-2.2deg);
+    transition: transform .35s ease;
+    width: 100%;
+  }
+  .photo-frame:hover{ transform: rotate(0deg) translateY(-4px); }
+  .photo-frame .img-wrap{
+    position: relative;
+    width: 100%;
+    padding-bottom: 115%; /* aspect ratio fallback that works everywhere */
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-d) 60%, var(--plum) 100%);
+    overflow: hidden;
+  }
+  .photo-frame .img-wrap img{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
+  .about-grid .photo-frame .img-wrap{ padding-bottom: 125%; }
+  .photo-frame .caption{
+    position:absolute; bottom:18px; left:20px; right:20px;
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); display:flex; justify-content:space-between;
+  }
+  .photo-frame .caption em{font-style:normal; color: var(--orange-d);}
+  .badge{
+    position:absolute; top:-18px; right:-22px; z-index: 5;
+    background: var(--ink); color: var(--cream);
+    border-radius:50%; width: 130px; height: 130px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform:uppercase;
+    text-align:center; line-height: 1.4; padding: 14px;
+    transform: rotate(8deg);
+    box-shadow: 6px 6px 0 var(--orange);
+    animation: spin 22s linear infinite;
+  }
+  .badge .big{font-family:'Fraunces', serif; font-size: 22px; line-height: 1; color: var(--orange); margin-bottom: 4px; letter-spacing:-0.02em;}
+  @keyframes spin{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+  }
+  /* keep readable while spinning - so spin only the inner ring */
+  .badge{ animation: none; }
+  .badge .ring{
+    position:absolute; inset:6px; border:1.5px dashed var(--orange);
+    border-radius:50%; animation: spin 22s linear infinite;
+    pointer-events:none;
+  }
+  a.badge{ color: var(--cream); text-decoration: none; }
+  a.badge:hover{ box-shadow: 6px 6px 0 var(--cream); transform: rotate(8deg) scale(1.04); }
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns: 1fr; gap: 60px;}
+    .photo-stack{max-width:420px; margin: 0 auto;}
+  }
+
+  /* ============== SECTION HELPERS ============== */
+  section{position:relative; padding: 110px 0; border-bottom: 1.5px solid var(--ink); overflow:hidden;}
+  .section-mark{
+    display:flex; gap:18px; align-items:baseline; margin-bottom: 30px;
+  }
+  .section-mark .num{
+    font-family:'Fraunces', serif; font-size: 64px; line-height:0.8;
+    color: var(--orange); font-style: italic; font-weight: 300;
+  }
+  .section-mark .label{font-size:12px;}
+  section h2{
+    font-size: clamp(44px, 6vw, 84px);
+    line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 50px; max-width: 18ch;
+  }
+  section h2 em{font-style: italic; color: var(--orange-d);}
+  section h2 .underline{
+    background-image: linear-gradient(transparent 65%, var(--gold) 65%);
+    background-size: 100% 100%;
+    padding: 0 0.05em;
+  }
+
+  /* ============== ABOUT — DARK SECTION ============== */
+  .dark{background: var(--ink); color: var(--cream); border-bottom-color: var(--ink);}
+  .dark::before{
+    content:""; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.84  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    pointer-events:none; z-index:0;
+  }
+  .dark .container{position:relative; z-index:1;}
+  .dark .label{color: var(--gold);}
+  .dark .section-mark .num{color: var(--gold);}
+  .dark h2 em{color: var(--orange);}
+  .dark a{color: var(--orange); border-bottom: 1.5px solid var(--orange-d);}
+  .dark a:hover{background:var(--orange); color:var(--ink); border-bottom-color: var(--orange);}
+
+  .about-grid{
+    display:grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items:start;
+  }
+  .about-grid .photo-frame{
+    background: var(--paper);
+    box-shadow: 14px 14px 0 var(--orange);
+    transform: rotate(2deg);
+  }
+  .about-grid .photo-frame .img-wrap{
+    background: linear-gradient(135deg, var(--teal), var(--ink));
+  }
+  .about-grid .body{font-size: 18.5px; line-height: 1.65;}
+  .about-grid .body .first{
+    font-family:'Fraunces', serif; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.25;
+    margin-bottom: 28px; color: var(--cream); font-style: italic; font-weight: 400;
+  }
+  .about-grid .body .first em{color: var(--orange); font-style: italic;}
+  .about-grid .body p{margin: 0 0 1em 0; color: #d4c5b3;}
+
+  .about-stickers{
+    display:flex; gap: 14px; flex-wrap:wrap; margin-top: 40px;
+  }
+  .sticker{
+    background: var(--cream); color: var(--ink);
+    padding: 10px 18px; border:1.5px solid var(--ink);
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    transform: rotate(-1.5deg); display:inline-block;
+    box-shadow: 4px 4px 0 var(--orange);
+  }
+  .sticker:nth-child(2n){transform: rotate(1.8deg); box-shadow: 4px 4px 0 var(--gold);}
+  .sticker:nth-child(3n){transform: rotate(-0.8deg); box-shadow: 4px 4px 0 var(--teal);}
+  .sticker.invert{background: var(--orange); color: var(--cream); border-color: var(--cream);}
+
+  @media (max-width:880px){
+    .about-grid{grid-template-columns:1fr; gap: 50px;}
+    .about-grid .photo-stack{max-width: 380px; margin: 0 auto;}
+  }
+  @media (max-width:520px){
+    .photo-stack{padding: 8px;}
+    .photo-frame{box-shadow: 8px 8px 0 var(--ink);}
+    .about-grid .photo-frame{box-shadow: 8px 8px 0 var(--orange);}
+    .badge{width: 100px; height: 100px; font-size: 9px; right: -10px; top: -10px;}
+    .badge .big{font-size: 18px;}
+  }
+
+  /* ============== WORK SECTION ============== */
+  .work-grid{display:grid; grid-template-columns: repeat(12, 1fr); gap: 22px;}
+  .card{
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    padding: 32px;
+    display:flex; flex-direction:column;
+    position:relative; overflow:hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform: translate(-4px,-4px); box-shadow: 8px 8px 0 var(--ink);}
+  .card .role-tag{
+    position:absolute; top:18px; right:18px;
+    background: var(--ink); color: var(--cream);
+    padding: 6px 12px; font-family:'Space Mono', monospace; font-size:10px;
+    letter-spacing:0.18em; text-transform:uppercase;
+  }
+  .card.feat .role-tag{background: var(--orange);}
+  .card h3{font-family:'Fraunces', serif; font-size: 32px; line-height:1; letter-spacing:-0.02em; margin: 12px 0 16px; max-width: 14ch;}
+  .card.feat h3{font-size: 56px;}
+  .card p{font-size: 15.5px; color: var(--ink-2); line-height: 1.55;}
+  .card .meta{margin-top:auto; padding-top: 20px; display:flex; justify-content: space-between; align-items:center; border-top: 1px dashed var(--rule);}
+  .card .meta .where{font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2);}
+  .card .meta a.go{
+    font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    background:var(--ink); color:var(--cream); padding: 8px 14px; border-radius: 999px;
+  }
+  .card .meta a.go:hover{background: var(--orange);}
+  .card.feat{grid-column: span 7; background: linear-gradient(135deg, var(--orange) 0%, var(--orange-d) 100%); color: var(--cream);}
+  .card.feat p{color: rgba(250,245,230,.88);}
+  .card.feat .meta{border-top-color: rgba(250,245,230,.3);}
+  .card.feat .meta .where{color: rgba(250,245,230,.7);}
+  .card.feat .meta a.go{background: var(--ink); color: var(--cream);}
+  .card.feat .meta a.go:hover{background: var(--cream); color: var(--ink);}
+  .card.std{grid-column: span 5;}
+  .card.half{grid-column: span 6;}
+  .card.dark-card{background: var(--ink); color: var(--cream);}
+  .card.dark-card p{color: #c9b9a3;}
+  .card.dark-card .meta{border-top-color: #4a3a2e;}
+  .card.dark-card .meta .where{color: #c9b9a3;}
+  .card.dark-card .meta a.go{background: var(--orange);}
+  .card.teal-card{background: var(--teal); color: var(--cream);}
+  .card.teal-card p{color: rgba(243,234,214,.85);}
+  .card.teal-card .meta{border-top-color: rgba(243,234,214,.3);}
+  .card.teal-card .meta .where{color: rgba(243,234,214,.7);}
+  @media (max-width:980px){
+    .work-grid{grid-template-columns:1fr;}
+    .card.feat, .card.std, .card.half{grid-column: span 1;}
+    .card.feat h3{font-size: 40px;}
+  }
+
+  /* ============== VIDEOS ============== */
+  .videos{display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px;}
+  .v{position:relative; overflow:hidden; border:1.5px solid var(--ink); background: var(--ink);}
+  .v .thumb{
+    position:relative;
+    aspect-ratio: 16/9;
+    background:#1a0f08 center/cover no-repeat;
+    transition: transform .4s ease;
+  }
+  .v:hover .thumb{transform: scale(1.05);}
+  .v .thumb a{position:absolute; inset:0;}
+  .v .thumb:after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 40%, rgba(20,11,8,.85));
+  }
+  .v .play{
+    position:absolute; left:14px; bottom:14px; z-index:2;
+    width: 38px; height:38px; border-radius:50%;
+    background: var(--orange); color: var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 14px; pointer-events:none;
+    transition: transform .25s ease, background .25s ease;
+  }
+  .v:hover .play{transform: scale(1.18); background: var(--cream); color: var(--orange);}
+  .v .meta{
+    padding: 14px 16px; background: var(--paper); border-top:1.5px solid var(--ink);
+  }
+  .v .tag{font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-d);}
+  .v h4{font-family:'Fraunces', serif; font-weight: 500; font-size: 17px; margin: 6px 0 0; line-height: 1.2; color: var(--ink); letter-spacing:-0.01em;}
+  .v a.title{color: var(--ink);}
+  .v a.title:hover{color: var(--orange-d);}
+  @media (max-width:1100px){ .videos{grid-template-columns: repeat(3, 1fr);} }
+  @media (max-width:760px){ .videos{grid-template-columns: repeat(2, 1fr);} }
+  @media (max-width:520px){ .videos{grid-template-columns: 1fr;} }
+
+  /* ============== WRITING / PRESS ============== */
+  .lines{border-top:1.5px solid var(--ink);}
+  .lines .row{
+    display:grid; grid-template-columns: 160px 1fr 110px; gap: 32px;
+    padding: 28px 0; border-bottom: 1.5px solid var(--ink);
+    align-items:center; transition: background .25s ease, padding .25s ease;
+  }
+  .lines .row:hover{background: var(--paper); padding-left: 16px; padding-right: 16px;}
+  .lines .row .when{font-family:'Space Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2);}
+  .lines .row .what{font-family:'Fraunces', serif; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing:-0.01em;}
+  .lines .row .what em{color: var(--ink-2); font-family:'Inter', sans-serif; font-size: 14px; font-style: normal; font-weight: 400; display:block; margin-top: 6px; letter-spacing: 0;}
+  .lines .row a.read{
+    font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    background: var(--ink); color: var(--cream); padding: 10px 16px; border-radius: 999px;
+    text-align:center; white-space:nowrap;
+  }
+  .lines .row a.read:hover{background: var(--orange);}
+  @media (max-width:760px){
+    .lines .row{grid-template-columns: 1fr; gap: 8px; padding: 22px 0; align-items: start;}
+    .lines .row a.read{align-self:start;}
+  }
+
+  /* ============== STAGE — ORANGE ACCENT SECTION ============== */
+  .ragtime{background: var(--orange); color: var(--cream); border-bottom-color: var(--ink);}
+  .ragtime::before{
+    content:""; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    pointer-events:none; z-index:0;
+  }
+  .ragtime .container{position:relative; z-index:1;}
+  .ragtime .label, .ragtime .section-mark .num{color: var(--ink);}
+  .ragtime h2 em{color: var(--ink);}
+  .ragtime h2 .underline{background-image: linear-gradient(transparent 65%, rgba(20,11,8,.35) 65%);}
+  .ragtime a{color:var(--ink); border-bottom: 1.5px solid var(--ink);}
+  .ragtime a:hover{background:var(--ink); color:var(--orange); border-color:var(--ink);}
+  .ragtime .stage-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items:start;}
+  .ragtime .pull{
+    font-family:'Fraunces', serif; font-size: clamp(28px, 3vw, 38px); line-height: 1.2;
+    font-style: italic; font-weight: 400;
+    border-left: 3px solid var(--ink); padding-left: 26px; margin: 0 0 32px;
+  }
+  .ragtime .body p{font-size: 17.5px; line-height: 1.65; color: rgba(250,245,230,.95); margin: 0 0 1em 0;}
+  .ragtime .role-card{
+    background: var(--ink); color: var(--cream); padding: 32px;
+    border: 1.5px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--cream);
+    transform: rotate(-1deg);
+  }
+  .ragtime .role-card .label{color: var(--orange);}
+  .ragtime .role-card h3{font-family:'Fraunces', serif; font-size: 38px; line-height: 1; margin: 16px 0 8px; color: var(--cream);}
+  .ragtime .role-card .who{font-family:'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--orange); margin-bottom: 18px;}
+  .ragtime .role-card .desc{font-size: 15px; color: #c9b9a3; line-height: 1.55;}
+
+  .ragtime .photo-frame{ background: var(--paper); box-shadow: 12px 12px 0 var(--ink); transform: rotate(-1.5deg); }
+  .ragtime .photo-frame:nth-child(2){ transform: rotate(2deg); box-shadow: 12px 12px 0 var(--ink); }
+  .ragtime .photo-frame .img-wrap{ padding-bottom: 100%; background: linear-gradient(135deg, var(--ink), var(--plum)); }
+  .ragtime .photo-frame .caption{ color: var(--ink); }
+  .ragtime .photo-frame .caption em{ color: var(--orange-d); }
+  .ragtime .stage-bottom{
+    display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;
+    margin-top: 70px; align-items: start;
+  }
+  @media (max-width:980px){ .ragtime .stage-bottom{grid-template-columns: 1fr; gap: 50px;} }
+  @media (max-width:880px){ .ragtime .stage-grid{grid-template-columns: 1fr; gap: 40px;} }
+
+  /* ============== CONTACT FOOTER ============== */
+  footer{
+    background: var(--ink); color: var(--cream);
+    padding: 100px 0 50px;
+    position:relative; overflow:hidden;
+  }
+  footer::before{
+    content:""; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.84  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    z-index:0;
+  }
+  footer .container{position:relative; z-index:1;}
+  footer h2{
+    font-family:'Fraunces', serif; font-size: clamp(56px, 9vw, 130px);
+    line-height: 0.92; letter-spacing: -0.025em; font-weight: 300;
+    margin: 12px 0 50px; color: var(--cream);
+  }
+  footer h2 em{font-style: italic; color: var(--orange); font-weight: 300;}
+  footer .label{color: var(--gold);}
+  footer .links-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap: 0;}
+  footer .links-grid a{
+    display:flex; justify-content: space-between; align-items: center;
+    padding: 26px 0; border-top: 1.5px solid #4a3a2e;
+    color: var(--cream);
+    font-family:'Fraunces', serif; font-size: 26px; letter-spacing: -0.01em;
+    transition: padding .25s ease, color .25s ease;
+  }
+  footer .links-grid a:hover{padding-left: 16px; color: var(--orange);}
+  footer .links-grid a:nth-child(odd){padding-right: 30px;}
+  footer .links-grid a:nth-child(even){padding-left: 30px; border-left: 1.5px solid #4a3a2e;}
+  footer .links-grid a .svc{font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #b3a48a; font-weight: 400;}
+  footer .colophon{
+    margin-top: 60px; padding-top: 24px; border-top: 1.5px solid #4a3a2e;
+    display:flex; justify-content:space-between; gap: 20px; flex-wrap:wrap;
+    font-family:'Space Mono', monospace; font-size: 11px; color: #b3a48a; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  @media (max-width:760px){
+    footer .links-grid{grid-template-columns: 1fr;}
+    footer .links-grid a:nth-child(even){padding-left: 0; border-left: 0;}
+    footer .links-grid a:nth-child(odd){padding-right: 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================== TOPBAR -->
+<div class="topbar">
+  <div class="row">
+    <a class="brand" href="#top">Clifton <em>D.</em> Cameron</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#watch">Watch</a>
+      <a href="#writing">Writing</a>
+      <a href="#stage">Stage</a>
+    </nav>
+    <a class="pill" href="#contact">Get in touch ↘</a>
+  </div>
+</div>
+
+<!-- ============================================== MARQUEE -->
+<div class="marquee">
+  <div class="track">
+    <span>Sound Designer <span class="star">✦</span></span>
+    <span>Modular Synthesist <span class="star">✦</span></span>
+    <span>Writer <span class="star">✦</span></span>
+    <span>Stage Actor <span class="star">✦</span></span>
+    <span>Multiphonics CV-2 <span class="star">✦</span></span>
+    <span>Synth &amp; Software <span class="star">✦</span></span>
+    <span>Serge Modular <span class="star">✦</span></span>
+    <span>Ragtime <span class="star">✦</span></span>
+    <span>dublab Archive <span class="star">✦</span></span>
+    <!-- duplicate for seamless scroll -->
+    <span>Sound Designer <span class="star">✦</span></span>
+    <span>Modular Synthesist <span class="star">✦</span></span>
+    <span>Writer <span class="star">✦</span></span>
+    <span>Stage Actor <span class="star">✦</span></span>
+    <span>Multiphonics CV-2 <span class="star">✦</span></span>
+    <span>Synth &amp; Software <span class="star">✦</span></span>
+    <span>Serge Modular <span class="star">✦</span></span>
+    <span>Ragtime <span class="star">✦</span></span>
+    <span>dublab Archive <span class="star">✦</span></span>
+  </div>
+</div>
+
+<!-- ============================================== HERO -->
+<header class="hero" id="top">
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="label">Los Angeles · Sound · Voltage · Voice</span>
+        <h1>
+          <span class="l1">Clifton</span>
+          <span class="l2">Develle</span>
+          <span class="l3">Cameron.</span>
+        </h1>
+        <p class="lede">
+          A sound designer, modular synthesist, writer, and performer who moves between
+          <em>circuit</em> and <em>stage</em>, from voltage-controlled instruments at
+          Applied Acoustics Systems to the boards of Actors' Repertory Theatre.
+        </p>
+        <div class="meta-line">
+          <span class="dot"></span>
+          <span class="label">Available for sound design · scoring · editorial · live</span>
+        </div>
+      </div>
+
+      <div class="photo-stack">
+        <a class="badge" href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener" title="Sound designer for Multiphonics CV-2 by Applied Acoustics Systems">
+          <div class="ring"></div>
+          <div class="big">CV-2</div>
+          <div>Multiphonics<br/>Sound Design</div>
+        </a>
+        <div class="photo-frame">
+          <div class="img-wrap">
+            <img src="clifton-studio.jpg" alt="Clifton Develle Cameron in studio" loading="lazy" />
+          </div>
+          <div class="caption">
+            <span>In Studio</span>
+            <em>Los Angeles</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================== ABOUT (DARK) -->
+<section class="dark" id="about">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">01</span>
+      <span class="label">Profile</span>
+    </div>
+    <h2>A practice that bridges <em>circuit</em> and <span class="underline" style="color:#f3ead6">stage.</span></h2>
+
+    <div class="about-grid">
+      <div class="photo-stack">
+        <div class="photo-frame">
+          <div class="img-wrap">
+            <img src="clifton-namm.jpg" alt="Clifton at the INA-GRM booth" loading="lazy" />
+          </div>
+          <div class="caption" style="color:var(--ink);">
+            <span>On the Floor</span>
+            <em>NAMM · INA-GRM</em>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <p class="first">
+          In his own words: a <em>writer, avant-garde sound composer, and painter</em>
+          with broad expertise in computers, analog synthesizers, and experimental motion graphics.
+        </p>
+        <p>
+          As sound designer for <a href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">Multiphonics CV-2</a>,
+          Clifton has shaped the voice of a flagship modular software environment used by
+          producers and composers around the world. As a contributor to
+          <a href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">Synth and Software</a>,
+          he writes about the instruments and ideas defining contemporary electronic music.
+        </p>
+        <p>
+          In 2025 he made his stage debut as Booker T. Washington in <em>Ragtime</em> with
+          Actors' Repertory Theatre of Simi, joining a full cast and orchestra at the Simi
+          Valley Cultural Arts Center for one of the musical's most historically charged roles.
+          In live electronic performance he has appeared with custom Serge Modular systems at
+          venues including Coaxial Arts Foundation in Los Angeles, with early work preserved
+          in the <a href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">dublab radio archive</a>.
+        </p>
+        <div class="about-stickers">
+          <span class="sticker">Sound Composer</span>
+          <span class="sticker invert">Modular ⚡</span>
+          <span class="sticker">Writer</span>
+          <span class="sticker">Painter</span>
+          <span class="sticker">Motion Graphics</span>
+          <span class="sticker">Stage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== SELECTED WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">02</span>
+      <span class="label">Selected Work</span>
+    </div>
+    <h2>Designing instruments. <em>Writing</em> about them. <span class="underline">Playing</span> them.</h2>
+
+    <div class="work-grid">
+      <article class="card feat">
+        <span class="role-tag">Sound Design</span>
+        <h3>Multiphonics CV-2</h3>
+        <p>Modular synthesis software environment from Applied Acoustics Systems.
+          A virtual modular built around control voltage thinking, with sound design
+          and patch contributions for the flagship release.</p>
+        <div class="meta">
+          <span class="where">Applied Acoustics · Montréal</span>
+          <a class="go" href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">View →</a>
+        </div>
+      </article>
+
+      <article class="card std dark-card">
+        <span class="role-tag">Writing</span>
+        <h3>Synth &amp; Software</h3>
+        <p>Reviews, deep dives, and conversations with the people behind the instruments
+          shaping electronic music today.</p>
+        <div class="meta">
+          <span class="where">Author archive · ongoing</span>
+          <a class="go" href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">Read →</a>
+        </div>
+      </article>
+
+      <article class="card half teal-card">
+        <span class="role-tag">Performance</span>
+        <h3>A Night of Serge Modular</h3>
+        <p>Live patch-based improvisation on a custom two-panel Serge system with
+          fellow synthesists at Coaxial Arts Foundation in Los Angeles.</p>
+        <div class="meta">
+          <span class="where">Coaxial Arts · Dec 2023</span>
+          <a class="go" href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener">Watch →</a>
+        </div>
+      </article>
+
+      <article class="card half">
+        <span class="role-tag">Archive</span>
+        <h3>Unyousual: The Coincidence</h3>
+        <p>Early creative work preserved in the dublab radio archive: a 2002 broadcast
+          titled "The Patron of the Art" from the long-running Unyousual series.</p>
+        <div class="meta">
+          <span class="where">dublab.com · 2002</span>
+          <a class="go" href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== WATCH -->
+<section id="watch">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">03</span>
+      <span class="label">Watch &amp; Listen</span>
+    </div>
+    <h2>Performances, <em>demos,</em> conversations.</h2>
+
+    <div class="videos">
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/isn1i_WDn_w/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener" aria-label="Serge Modular night"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Live · Coaxial</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener">A Night of Serge Modular</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/MFYpife-rVo/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=MFYpife-rVo" target="_blank" rel="noopener" aria-label="Synthplex feature"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Industry · Synthplex</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=MFYpife-rVo" target="_blank" rel="noopener">Synthplex Presenters Feature</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/m3CfoopRBxE/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=m3CfoopRBxE" target="_blank" rel="noopener" aria-label="Haken Continuum"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Demo · NAMM</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=m3CfoopRBxE" target="_blank" rel="noopener">Haken Continuum at NAMM</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/epo9FEQzZ44/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=epo9FEQzZ44" target="_blank" rel="noopener" aria-label="Clifton at EoWave"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Performance</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=epo9FEQzZ44" target="_blank" rel="noopener">Clifton Cameron at EoWave</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Nyn0s-8pwg8/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=Nyn0s-8pwg8" target="_blank" rel="noopener" aria-label="Haken ContinuuMini"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Demo · NAMM</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=Nyn0s-8pwg8" target="_blank" rel="noopener">Haken ContinuuMini</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Nqij_mJ31C0/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=Nqij_mJ31C0&amp;t=262s" target="_blank" rel="noopener" aria-label="On Analogue Systems"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Conversation</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=Nqij_mJ31C0&amp;t=262s" target="_blank" rel="noopener">On Analogue Systems</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/ojZwIlHKsm0/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=ojZwIlHKsm0" target="_blank" rel="noopener" aria-label="PSP Anniversary"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Feature · PSP</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=ojZwIlHKsm0" target="_blank" rel="noopener">PSP Anniversary Wishes</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/dBNuR6EEgRc/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=dBNuR6EEgRc&amp;t=1s" target="_blank" rel="noopener" aria-label="Martinic AX73"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Studio · East West</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=dBNuR6EEgRc&amp;t=1s" target="_blank" rel="noopener">Martinic AX73 at East West</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/MODmsmKZ1uQ/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=MODmsmKZ1uQ" target="_blank" rel="noopener" aria-label="Influenced By Intensity"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Music · 2003</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=MODmsmKZ1uQ" target="_blank" rel="noopener">Quintessential: Influenced By Intensity</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Efh4Ucoa7Vk/hqdefault.jpg');">
+          <a href="https://www.youtube.com/watch?v=Efh4Ucoa7Vk" target="_blank" rel="noopener" aria-label="Daedelus"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Music</div>
+          <h4><a class="title" href="https://www.youtube.com/watch?v=Efh4Ucoa7Vk" target="_blank" rel="noopener">Daedelus: Just Briefly</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background:linear-gradient(135deg, var(--orange), var(--orange-d)); display:flex; align-items:center; justify-content:center;">
+          <a href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener" aria-label="Vimeo"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">Vimeo</div>
+          <h4><a class="title" href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener">Selected work on Vimeo</a></h4>
+        </div>
+      </article>
+
+      <article class="v">
+        <div class="thumb" style="background:linear-gradient(135deg, var(--teal), var(--ink)); display:flex; align-items:center; justify-content:center;">
+          <a href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener" aria-label="YouTube channel"></a>
+          <div class="play">▶</div>
+        </div>
+        <div class="meta">
+          <div class="tag">YouTube</div>
+          <h4><a class="title" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener">@pendulumdistinction</a></h4>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== WRITING / PRESS -->
+<section id="writing">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">04</span>
+      <span class="label">Writing &amp; Press</span>
+    </div>
+    <h2>Words about <em>instruments</em> and the people who make them.</h2>
+
+    <div class="lines">
+      <div class="row">
+        <div class="when">Synth &amp; Software</div>
+        <div class="what">
+          Author archive · Clifton Develle Cameron
+          <em>Reviews, technical features, and conversations on synthesizers, modular systems, and electronic music tools.</em>
+        </div>
+        <a class="read" href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="row">
+        <div class="when">VC Reporter</div>
+        <div class="what">
+          An American Tale: Actors' Repertory Theatre presents <em style="font-style:italic">Ragtime</em>
+          <em>Local press coverage of the production featuring Clifton as Booker T. Washington.</em>
+        </div>
+        <a class="read" href="https://www.vcreporter.com/art_and_culture/american-tale-actors-repertory-theatre-of-simi-presents-ragtime/article_c5934922-fa1d-11ef-9c98-5fd3b45f6e02.html" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="row">
+        <div class="when">dublab</div>
+        <div class="what">
+          Unyousual: The Patron of the Art, The Coincidence (2002)
+          <em>Early radio archive piece preserved in the dublab library.</em>
+        </div>
+        <a class="read" href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">Listen →</a>
+      </div>
+      <div class="row">
+        <div class="when">LinkedIn</div>
+        <div class="what">
+          Professional profile
+          <em>Full credits, history, and connections.</em>
+        </div>
+        <a class="read" href="https://www.linkedin.com/in/clifton-develle-cameron-855424275" target="_blank" rel="noopener">Visit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== STAGE (ORANGE) -->
+<section class="ragtime" id="stage">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">05</span>
+      <span class="label">On Stage</span>
+    </div>
+    <h2>From <em>Ragtime</em> to the <span class="underline">modular rig.</span></h2>
+
+    <div class="stage-grid">
+      <div>
+        <p class="pull">"Honored to be a part of an incredible cast in the legendary musical while playing Booker T. Washington in <em style="font-style:italic">Ragtime</em>." <span style="display:block; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-style:normal; margin-top:14px; color:var(--ink);">Cast bio · ARTS Ragtime program</span></p>
+        <div class="body">
+          <p>
+            In 2025 Clifton made his stage debut as Booker T. Washington in Stephen Flaherty
+            and Lynn Ahrens' <em>Ragtime</em> with Actors' Repertory Theatre of Simi,
+            joining a full cast and orchestra at the Simi Valley Cultural Arts Center for
+            one of the musical's most historically charged roles.
+          </p>
+          <p>
+            Live electronic performance is its own kind of theater. Whether patching a Serge
+            at Coaxial Arts Foundation, demonstrating Haken Audio's Continuum on the NAMM
+            floor, or appearing at EoWave's events, his performances treat each instrument
+            as a collaborator rather than a tool. An attitude that carries through the
+            writing and the sound design alike.
+          </p>
+        </div>
+      </div>
+      <div class="photo-stack">
+        <div class="photo-frame">
+          <div class="img-wrap">
+            <img src="clifton-ragtime-stage.jpg" alt="Clifton Develle Cameron as Booker T. Washington in Ragtime" loading="lazy" />
+          </div>
+          <div class="caption">
+            <span>On Stage</span>
+            <em>Ragtime · 2025</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-bottom">
+      <div class="photo-stack">
+        <div class="photo-frame">
+          <div class="img-wrap">
+            <img src="clifton-ragtime-backstage.jpg" alt="Clifton in costume after the Ragtime performance" loading="lazy" />
+          </div>
+          <div class="caption">
+            <span>After Curtain</span>
+            <em>Simi Valley</em>
+          </div>
+        </div>
+      </div>
+      <aside class="role-card" style="margin-top:20px;">
+        <span class="label">Stage Debut</span>
+        <h3>Ragtime</h3>
+        <div class="who">as Booker T. Washington</div>
+        <div class="desc">
+          Actors' Repertory Theatre of Simi · Simi Valley Cultural Arts Center · 2025<br/>
+          Music by Stephen Flaherty · Lyrics by Lynn Ahrens · Book by Terrence McNally
+        </div>
+      </aside>
+      <aside class="role-card" style="margin-top:20px; background: var(--cream); color: var(--ink); box-shadow: 10px 10px 0 var(--ink);">
+        <span class="label" style="color:var(--orange-d);">Press</span>
+        <h3 style="color:var(--ink);">An American Tale</h3>
+        <div class="who" style="color:var(--orange-d);">VC Reporter feature</div>
+        <div class="desc" style="color:var(--ink-2);">
+          Local press coverage of the production:
+          <a href="https://www.vcreporter.com/art_and_culture/american-tale-actors-repertory-theatre-of-simi-presents-ragtime/article_c5934922-fa1d-11ef-9c98-5fd3b45f6e02.html" target="_blank" rel="noopener" style="color:var(--orange-d); border-bottom:1px solid var(--orange-d);">read the article</a>.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="container">
+    <span class="label">06 · Get In Touch</span>
+    <h2>Let's make some <em>noise.</em></h2>
+    <p style="font-size:18px; max-width:620px; color:#c9b9a3; margin: 0 0 60px;">
+      Open to sound design, scoring, performance, editorial collaboration, and the occasional
+      role on stage. The best routes are below.
+    </p>
+
+    <div class="links-grid">
+      <a href="https://www.linkedin.com/in/clifton-develle-cameron-855424275" target="_blank" rel="noopener">
+        LinkedIn <span class="svc">profile ↗</span>
+      </a>
+      <a href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener">
+        YouTube <span class="svc">@pendulumdistinction ↗</span>
+      </a>
+      <a href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener">
+        Vimeo <span class="svc">selected work ↗</span>
+      </a>
+      <a href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">
+        Synth &amp; Software <span class="svc">author archive ↗</span>
+      </a>
+    </div>
+
+    <div class="colophon">
+      <span>© Clifton Develle Cameron</span>
+      <span>Sound · voltage · voice · stage</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
