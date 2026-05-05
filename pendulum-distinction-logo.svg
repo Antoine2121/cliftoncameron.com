@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Pendulum Distinction">
+  <!-- Two gold arrowhead triangles (top-right and bottom-left, pointing along the rim) -->
+  <polygon points="312,118 332,108 322,130" fill="#c9a227"/>
+  <polygon points="88,282 68,292 78,270" fill="#c9a227"/>
+
+  <!-- Outer circle with two breaks (top and bottom) for the line that pierces it -->
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+    <!-- Outer ring (broken at top and bottom) -->
+    <path d="M 200,80
+             A 120,120 0 0 1 320,200
+             A 120,120 0 0 1 200,320"/>
+    <path d="M 200,320
+             A 120,120 0 0 1 80,200
+             A 120,120 0 0 1 200,80"/>
+
+    <!-- Vertical line that enters the top and exits the bottom, jogging through the spiral entry/exit -->
+    <path d="M 200,40 L 200,86 Q 200,96 210,100 Q 222,104 222,116"/>
+    <path d="M 178,284 Q 178,296 190,300 Q 200,304 200,314 L 200,360"/>
+
+    <!-- Spiral (Archimedean), center 200,200, growing outward -->
+    <path d="M 200,200
+             m 0,0
+             q 4,-4 8,0
+             q 6,6 0,14
+             q -10,10 -22,0
+             q -16,-14 0,-32
+             q 22,-22 44,0
+             q 28,28 0,58
+             q -34,34 -68,0
+             q -40,-40 0,-82
+             q 46,-46 92,0"/>
+  </g>
+
+  <!-- Spiral nodes (black dots along the spiral arms) -->
+  <g fill="currentColor">
+    <circle cx="146" cy="232" r="6"/>
+    <circle cx="178" cy="252" r="6"/>
+    <circle cx="226" cy="252" r="6"/>
+    <circle cx="252" cy="220" r="6"/>
+    <circle cx="216" cy="146" r="6"/>
+    <circle cx="156" cy="166" r="6"/>
+  </g>
+</svg>

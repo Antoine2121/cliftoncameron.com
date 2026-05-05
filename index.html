@@ -4,7 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Clifton Develle Cameron · Sound Designer · Modular Synthesist · Performer</title>
-<meta name="description" content="Clifton Develle Cameron, sound designer for Applied Acoustics Systems' Multiphonics CV-2, contributing writer at Synth and Software, modular performer and stage actor." />
+<meta name="description" content="Clifton Develle Cameron — sound designer for Applied Acoustics Systems' Multiphonics CV-2, contributing writer at Synth and Software, modular performer, U.S. Navy veteran, and stage actor. Founder of Pendulum Distinction." />
+
+<link rel="icon" type="image/svg+xml" href="pendulum-distinction-logo.svg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +16,15 @@
   :root{
     --cream:    #f3ead6;
     --paper:    #faf5e6;
-    --ink:      #140b08;
-    --ink-2:    #4a3a2e;
+    --ink:      #0e2418;     /* near-black forest */
+    --ink-2:    #2a4836;     /* medium-dark forest */
     --rule:     #c8b89a;
-    --orange:   #e2521b;     /* drawn from his shirt */
-    --orange-d: #b73c12;
-    --gold:     #d8a23a;
-    --teal:     #1f5654;
-    --plum:     #4d1a2b;
+    --forest:   #1f5132;     /* primary forest green */
+    --forest-d: #143822;     /* deep forest */
+    --moss:     #4a6b3f;     /* lighter accent green */
+    --gold:     #c9a227;     /* gold trim */
+    --gold-l:   #e8c769;     /* light gold */
+    --gold-d:   #8e6f10;     /* deep gold */
   }
   *{box-sizing:border-box; -webkit-font-smoothing: antialiased;}
   html{scroll-behavior: smooth;}
@@ -34,7 +37,7 @@
     background-size: 200px 200px;
   }
   a{color:var(--ink); text-decoration:none;}
-  ::selection{background:var(--orange); color:var(--cream);}
+  ::selection{background:var(--forest); color:var(--cream);}
 
   h1,h2,h3,.serif{font-family:'Fraunces', Georgia, serif; font-weight:400; letter-spacing:-0.015em; line-height:0.95;}
   .mono{font-family:'Space Mono', monospace;}
@@ -57,21 +60,23 @@
   }
   .topbar .brand{
     font-family:'Fraunces', serif; font-size:20px; font-weight:500; letter-spacing:-0.01em;
+    display:flex; align-items:center; gap:12px;
   }
-  .topbar .brand em{font-style:italic; color:var(--orange-d); font-weight:400;}
+  .topbar .brand .mark{ width:30px; height:30px; color: var(--ink); flex-shrink:0; }
+  .topbar .brand em{font-style:italic; color:var(--forest); font-weight:400;}
   .topbar nav{display:flex; gap:22px;}
   .topbar nav a{
     font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em;
     text-transform:uppercase; padding:6px 0; position:relative;
   }
-  .topbar nav a:hover{color:var(--orange-d);}
+  .topbar nav a:hover{color:var(--forest);}
   .topbar .pill{
     padding: 8px 16px; border:1.5px solid var(--ink);
     border-radius: 999px; background: var(--ink); color: var(--cream);
     font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em;
     text-transform:uppercase;
   }
-  .topbar .pill:hover{background: var(--orange); border-color:var(--orange); color:var(--cream);}
+  .topbar .pill:hover{background: var(--forest); border-color:var(--forest); color:var(--cream);}
   @media (max-width:880px){ .topbar nav{display:none;} }
 
   /* ============== MARQUEE ============== */
@@ -86,7 +91,7 @@
     animation: scroll 38s linear infinite;
     font-family:'Fraunces', serif; font-style: italic; font-size: 22px; font-weight: 400;
   }
-  .marquee .track .star{color: var(--orange); font-style: normal;}
+  .marquee .track .star{color: var(--gold); font-style: normal;}
   @keyframes scroll{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
@@ -101,11 +106,11 @@
   }
   .hero .container{position:relative; z-index:2;}
   .hero .blob1, .hero .blob2{
-    position:absolute; border-radius:50%; filter: blur(80px); opacity: .55;
+    position:absolute; border-radius:50%; filter: blur(80px); opacity: .42;
     pointer-events:none; z-index:1;
   }
-  .hero .blob1{width:520px; height:520px; background: var(--orange); right:-160px; top:-100px;}
-  .hero .blob2{width:420px; height:420px; background: var(--gold); left:-160px; bottom:-180px; opacity:.45;}
+  .hero .blob1{width:520px; height:520px; background: var(--forest); right:-160px; top:-100px;}
+  .hero .blob2{width:420px; height:420px; background: var(--gold); left:-160px; bottom:-180px; opacity:.35;}
 
   .hero-grid{
     display:grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center;
@@ -118,22 +123,22 @@
     margin: 24px 0 0;
   }
   .hero h1 .l1{display:block;}
-  .hero h1 .l2{display:block; font-style:italic; font-weight: 300; color: var(--orange-d); margin-left: 0.06em;}
+  .hero h1 .l2{display:block; font-style:italic; font-weight: 300; color: var(--forest); margin-left: 0.06em;}
   .hero h1 .l3{display:block; margin-left: 0.16em;}
   .hero .meta-line{
     display:flex; align-items:center; gap: 14px; flex-wrap:wrap;
     margin-top: 38px; padding-top: 22px;
     border-top: 1.5px solid var(--ink);
   }
-  .hero .meta-line span.dot{width:8px; height:8px; background: var(--orange); border-radius:50%; display:inline-block;}
+  .hero .meta-line span.dot{width:8px; height:8px; background: var(--gold); border-radius:50%; display:inline-block;}
   .hero .lede{
     margin-top: 28px;
     font-family:'Fraunces', serif; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35;
     max-width: 620px; color: var(--ink-2); font-weight: 400;
   }
-  .hero .lede em{color: var(--orange-d); font-style: italic;}
+  .hero .lede em{color: var(--forest); font-style: italic;}
 
-  /* hero photo stack */
+  /* hero photo stack with logo overlay */
   .photo-stack{position:relative; padding: 20px; width:100%;}
   .photo-frame{
     position:relative;
@@ -149,8 +154,8 @@
   .photo-frame .img-wrap{
     position: relative;
     width: 100%;
-    padding-bottom: 115%; /* aspect ratio fallback that works everywhere */
-    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-d) 60%, var(--plum) 100%);
+    padding-bottom: 115%;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-d) 60%, var(--ink) 100%);
     overflow: hidden;
   }
   .photo-frame .img-wrap img{
@@ -165,32 +170,23 @@
     font-family:'Space Mono', monospace; font-size:11px; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--ink); display:flex; justify-content:space-between;
   }
-  .photo-frame .caption em{font-style:normal; color: var(--orange-d);}
-  .badge{
-    position:absolute; top:-18px; right:-22px; z-index: 5;
-    background: var(--ink); color: var(--cream);
-    border-radius:50%; width: 130px; height: 130px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform:uppercase;
-    text-align:center; line-height: 1.4; padding: 14px;
+  .photo-frame .caption em{font-style:normal; color: var(--forest);}
+
+  /* Pendulum Distinction logo badge — replaces the spinning circular badge */
+  .logo-badge{
+    position:absolute; top:-24px; right:-26px; z-index: 5;
+    background: var(--cream);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    width: 150px; height: 150px;
+    padding: 18px;
+    box-shadow: 6px 6px 0 var(--gold);
     transform: rotate(8deg);
-    box-shadow: 6px 6px 0 var(--orange);
-    animation: spin 22s linear infinite;
+    color: var(--ink);
+    transition: transform .35s ease, box-shadow .35s ease;
   }
-  .badge .big{font-family:'Fraunces', serif; font-size: 22px; line-height: 1; color: var(--orange); margin-bottom: 4px; letter-spacing:-0.02em;}
-  @keyframes spin{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
-  }
-  /* keep readable while spinning - so spin only the inner ring */
-  .badge{ animation: none; }
-  .badge .ring{
-    position:absolute; inset:6px; border:1.5px dashed var(--orange);
-    border-radius:50%; animation: spin 22s linear infinite;
-    pointer-events:none;
-  }
-  a.badge{ color: var(--cream); text-decoration: none; }
-  a.badge:hover{ box-shadow: 6px 6px 0 var(--cream); transform: rotate(8deg) scale(1.04); }
+  .logo-badge:hover{ transform: rotate(0deg) scale(1.04); box-shadow: 8px 8px 0 var(--forest); }
+  .logo-badge svg{ width:100%; height:100%; display:block; }
 
   @media (max-width:980px){
     .hero-grid{grid-template-columns: 1fr; gap: 60px;}
@@ -206,6 +202,7 @@
       display: inline; margin: 0;
     }
     .topbar .brand{ font-size: 16px; }
+    .topbar .brand .mark{ width: 24px; height: 24px; }
     .topbar .pill{ padding: 7px 12px; font-size: 10px; letter-spacing: 0.14em; }
     .topbar .row{ gap: 12px; padding: 12px 18px; }
   }
@@ -217,7 +214,7 @@
   }
   .section-mark .num{
     font-family:'Fraunces', serif; font-size: 64px; line-height:0.8;
-    color: var(--orange); font-style: italic; font-weight: 300;
+    color: var(--gold-d); font-style: italic; font-weight: 300;
   }
   .section-mark .label{font-size:12px;}
   section h2{
@@ -225,45 +222,45 @@
     line-height: 0.95; letter-spacing: -0.02em;
     margin: 0 0 50px; max-width: 18ch;
   }
-  section h2 em{font-style: italic; color: var(--orange-d);}
+  section h2 em{font-style: italic; color: var(--forest);}
   section h2 .underline{
     background-image: linear-gradient(transparent 65%, var(--gold) 65%);
     background-size: 100% 100%;
     padding: 0 0.05em;
   }
 
-  /* ============== ABOUT — DARK SECTION ============== */
-  .dark{background: var(--ink); color: var(--cream); border-bottom-color: var(--ink);}
+  /* ============== ABOUT — DARK FOREST SECTION ============== */
+  .dark{background: var(--forest-d); color: var(--cream); border-bottom-color: var(--ink);}
   .dark::before{
     content:""; position:absolute; inset:0;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.84  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     pointer-events:none; z-index:0;
   }
   .dark .container{position:relative; z-index:1;}
-  .dark .label{color: var(--gold);}
+  .dark .label{color: var(--gold-l);}
   .dark .section-mark .num{color: var(--gold);}
-  .dark h2 em{color: var(--orange);}
-  .dark a{color: var(--orange); border-bottom: 1.5px solid var(--orange-d);}
-  .dark a:hover{background:var(--orange); color:var(--ink); border-bottom-color: var(--orange);}
+  .dark h2 em{color: var(--gold-l);}
+  .dark a{color: var(--gold-l); border-bottom: 1.5px solid var(--gold-d);}
+  .dark a:hover{background:var(--gold); color:var(--ink); border-bottom-color: var(--gold);}
 
   .about-grid{
     display:grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items:start;
   }
   .about-grid .photo-frame{
     background: var(--paper);
-    box-shadow: 14px 14px 0 var(--orange);
+    box-shadow: 14px 14px 0 var(--gold);
     transform: rotate(2deg);
   }
   .about-grid .photo-frame .img-wrap{
-    background: linear-gradient(135deg, var(--teal), var(--ink));
+    background: linear-gradient(135deg, var(--moss), var(--ink));
   }
   .about-grid .body{font-size: 18.5px; line-height: 1.65;}
   .about-grid .body .first{
     font-family:'Fraunces', serif; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.25;
     margin-bottom: 28px; color: var(--cream); font-style: italic; font-weight: 400;
   }
-  .about-grid .body .first em{color: var(--orange); font-style: italic;}
-  .about-grid .body p{margin: 0 0 1em 0; color: #d4c5b3;}
+  .about-grid .body .first em{color: var(--gold-l); font-style: italic;}
+  .about-grid .body p{margin: 0 0 1em 0; color: #d4cbb3;}
 
   .about-stickers{
     display:flex; gap: 14px; flex-wrap:wrap; margin-top: 40px;
@@ -273,11 +270,11 @@
     padding: 10px 18px; border:1.5px solid var(--ink);
     font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
     transform: rotate(-1.5deg); display:inline-block;
-    box-shadow: 4px 4px 0 var(--orange);
+    box-shadow: 4px 4px 0 var(--gold);
   }
-  .sticker:nth-child(2n){transform: rotate(1.8deg); box-shadow: 4px 4px 0 var(--gold);}
-  .sticker:nth-child(3n){transform: rotate(-0.8deg); box-shadow: 4px 4px 0 var(--teal);}
-  .sticker.invert{background: var(--orange); color: var(--cream); border-color: var(--cream);}
+  .sticker:nth-child(2n){transform: rotate(1.8deg); box-shadow: 4px 4px 0 var(--forest);}
+  .sticker:nth-child(3n){transform: rotate(-0.8deg); box-shadow: 4px 4px 0 var(--moss);}
+  .sticker.invert{background: var(--forest); color: var(--cream); border-color: var(--cream);}
 
   @media (max-width:880px){
     .about-grid{grid-template-columns:1fr; gap: 50px;}
@@ -286,9 +283,8 @@
   @media (max-width:520px){
     .photo-stack{padding: 8px;}
     .photo-frame{box-shadow: 8px 8px 0 var(--ink);}
-    .about-grid .photo-frame{box-shadow: 8px 8px 0 var(--orange);}
-    .badge{width: 100px; height: 100px; font-size: 9px; right: -10px; top: -10px;}
-    .badge .big{font-size: 18px;}
+    .about-grid .photo-frame{box-shadow: 8px 8px 0 var(--gold);}
+    .logo-badge{width: 110px; height: 110px; right: -10px; top: -10px; padding: 14px;}
   }
 
   /* ============== WORK SECTION ============== */
@@ -308,7 +304,7 @@
     padding: 6px 12px; font-family:'Space Mono', monospace; font-size:10px;
     letter-spacing:0.18em; text-transform:uppercase;
   }
-  .card.feat .role-tag{background: var(--orange);}
+  .card.feat .role-tag{background: var(--gold); color: var(--ink);}
   .card h3{font-family:'Fraunces', serif; font-size: 32px; line-height:1; letter-spacing:-0.02em; margin: 12px 0 16px; max-width: 14ch;}
   .card.feat h3{font-size: 56px;}
   .card p{font-size: 15.5px; color: var(--ink-2); line-height: 1.55;}
@@ -318,28 +314,68 @@
     font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     background:var(--ink); color:var(--cream); padding: 8px 14px; border-radius: 999px;
   }
-  .card .meta a.go:hover{background: var(--orange);}
-  .card.feat{grid-column: span 7; background: linear-gradient(135deg, var(--orange) 0%, var(--orange-d) 100%); color: var(--cream);}
-  .card.feat p{color: rgba(250,245,230,.88);}
-  .card.feat .meta{border-top-color: rgba(250,245,230,.3);}
-  .card.feat .meta .where{color: rgba(250,245,230,.7);}
-  .card.feat .meta a.go{background: var(--ink); color: var(--cream);}
+  .card .meta a.go:hover{background: var(--forest);}
+  .card.feat{grid-column: span 7; background: linear-gradient(135deg, var(--forest) 0%, var(--forest-d) 100%); color: var(--cream);}
+  .card.feat p{color: rgba(243,234,214,.88);}
+  .card.feat .meta{border-top-color: rgba(243,234,214,.3);}
+  .card.feat .meta .where{color: rgba(243,234,214,.7);}
+  .card.feat .meta a.go{background: var(--gold); color: var(--ink);}
   .card.feat .meta a.go:hover{background: var(--cream); color: var(--ink);}
   .card.std{grid-column: span 5;}
   .card.half{grid-column: span 6;}
   .card.dark-card{background: var(--ink); color: var(--cream);}
-  .card.dark-card p{color: #c9b9a3;}
-  .card.dark-card .meta{border-top-color: #4a3a2e;}
-  .card.dark-card .meta .where{color: #c9b9a3;}
-  .card.dark-card .meta a.go{background: var(--orange);}
-  .card.teal-card{background: var(--teal); color: var(--cream);}
-  .card.teal-card p{color: rgba(243,234,214,.85);}
-  .card.teal-card .meta{border-top-color: rgba(243,234,214,.3);}
-  .card.teal-card .meta .where{color: rgba(243,234,214,.7);}
+  .card.dark-card p{color: #c9bfa3;}
+  .card.dark-card .meta{border-top-color: #2a4836;}
+  .card.dark-card .meta .where{color: #c9bfa3;}
+  .card.dark-card .meta a.go{background: var(--gold); color: var(--ink);}
+  .card.moss-card{background: var(--moss); color: var(--cream);}
+  .card.moss-card p{color: rgba(243,234,214,.85);}
+  .card.moss-card .meta{border-top-color: rgba(243,234,214,.3);}
+  .card.moss-card .meta .where{color: rgba(243,234,214,.7);}
   @media (max-width:980px){
     .work-grid{grid-template-columns:1fr;}
     .card.feat, .card.std, .card.half{grid-column: span 1;}
     .card.feat h3{font-size: 40px;}
+  }
+
+  /* ============== PARTNERSHIPS — gold-trimmed list ============== */
+  .partners-intro{
+    font-family:'Fraunces', serif; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.4;
+    max-width: 760px; color: var(--ink-2); margin: -20px 0 50px; font-style: italic;
+  }
+  .partners{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 1.5px solid var(--ink); border-left: 1.5px solid var(--ink);
+  }
+  .partner{
+    border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink);
+    padding: 28px 26px; background: var(--paper);
+    transition: background .25s ease;
+    position: relative;
+  }
+  .partner:hover{background: var(--cream);}
+  .partner::before{
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .partner:hover::before{ transform: scaleX(1); }
+  .partner .role{
+    font-family:'Space Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-d); margin-bottom: 10px;
+  }
+  .partner .name{
+    font-family:'Fraunces', serif; font-size: 22px; line-height: 1.15;
+    letter-spacing: -0.01em; color: var(--ink);
+  }
+  .partner .where{
+    font-size: 13px; color: var(--ink-2); margin-top: 6px;
+  }
+  @media (max-width:880px){
+    .partners{grid-template-columns: repeat(2, 1fr);}
+  }
+  @media (max-width:520px){
+    .partners{grid-template-columns: 1fr;}
   }
 
   /* ============== VIDEOS ============== */
@@ -353,30 +389,30 @@
   .v .thumb{
     position:relative;
     aspect-ratio: 16/9;
-    background:#1a0f08 center/cover no-repeat;
+    background:#0e2418 center/cover no-repeat;
     transition: transform .4s ease;
   }
   .v:hover .thumb{transform: scale(1.05);}
   .v .thumb:after{
     content:""; position:absolute; inset:0;
-    background: linear-gradient(180deg, transparent 40%, rgba(20,11,8,.85));
+    background: linear-gradient(180deg, transparent 40%, rgba(14,36,24,.85));
     pointer-events:none;
   }
   .v .play{
     position:absolute; left:14px; bottom:14px; z-index:2;
     width: 38px; height:38px; border-radius:50%;
-    background: var(--orange); color: var(--cream);
+    background: var(--gold); color: var(--ink);
     display:flex; align-items:center; justify-content:center;
     font-size: 14px; pointer-events:none;
     transition: transform .25s ease, background .25s ease;
   }
-  .v:hover .play{transform: scale(1.18); background: var(--cream); color: var(--orange);}
+  .v:hover .play{transform: scale(1.18); background: var(--cream); color: var(--forest);}
   .v .meta{
     padding: 14px 16px; background: var(--paper); border-top:1.5px solid var(--ink);
   }
-  .v .tag{font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-d);}
+  .v .tag{font-family:'Space Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-d);}
   .v h4{font-family:'Fraunces', serif; font-weight: 500; font-size: 17px; margin: 6px 0 0; line-height: 1.2; color: var(--ink); letter-spacing:-0.01em; transition: color .2s ease;}
-  .v:hover h4{color: var(--orange-d);}
+  .v:hover h4{color: var(--forest);}
   @media (max-width:1100px){ .videos{grid-template-columns: repeat(3, 1fr);} }
   @media (max-width:760px){ .videos{grid-template-columns: repeat(2, 1fr);} }
   @media (max-width:520px){ .videos{grid-template-columns: 1fr;} }
@@ -397,54 +433,85 @@
     background: var(--ink); color: var(--cream); padding: 10px 16px; border-radius: 999px;
     text-align:center; white-space:nowrap;
   }
-  .lines .row a.read:hover{background: var(--orange);}
+  .lines .row a.read:hover{background: var(--forest);}
   @media (max-width:760px){
     .lines .row{grid-template-columns: 1fr; gap: 8px; padding: 22px 0; align-items: start;}
     .lines .row a.read{align-self:start;}
   }
 
-  /* ============== STAGE — ORANGE ACCENT SECTION ============== */
-  .ragtime{background: var(--orange); color: var(--cream); border-bottom-color: var(--ink);}
+  /* ============== STAGE — gold-on-forest accent SECTION ============== */
+  .ragtime{background: var(--forest); color: var(--cream); border-bottom-color: var(--ink);}
   .ragtime::before{
     content:""; position:absolute; inset:0;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     pointer-events:none; z-index:0;
   }
   .ragtime .container{position:relative; z-index:1;}
-  .ragtime .label, .ragtime .section-mark .num{color: var(--ink);}
-  .ragtime h2 em{color: var(--ink);}
-  .ragtime h2 .underline{background-image: linear-gradient(transparent 65%, rgba(20,11,8,.35) 65%);}
-  .ragtime a{color:var(--ink); border-bottom: 1.5px solid var(--ink);}
-  .ragtime a:hover{background:var(--ink); color:var(--orange); border-color:var(--ink);}
+  .ragtime .label, .ragtime .section-mark .num{color: var(--gold-l);}
+  .ragtime h2 em{color: var(--gold-l);}
+  .ragtime h2 .underline{background-image: linear-gradient(transparent 65%, var(--gold) 65%);}
+  .ragtime a{color: var(--gold-l); border-bottom: 1.5px solid var(--gold);}
+  .ragtime a:hover{background: var(--gold); color: var(--ink); border-color: var(--gold);}
   .ragtime .stage-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items:start;}
   .ragtime .pull{
     font-family:'Fraunces', serif; font-size: clamp(28px, 3vw, 38px); line-height: 1.2;
     font-style: italic; font-weight: 400;
-    border-left: 3px solid var(--ink); padding-left: 26px; margin: 0 0 32px;
+    border-left: 3px solid var(--gold); padding-left: 26px; margin: 0 0 32px;
   }
-  .ragtime .body p{font-size: 17.5px; line-height: 1.65; color: rgba(250,245,230,.95); margin: 0 0 1em 0;}
+  .ragtime .body p{font-size: 17.5px; line-height: 1.65; color: rgba(243,234,214,.95); margin: 0 0 1em 0;}
   .ragtime .role-card{
     background: var(--ink); color: var(--cream); padding: 32px;
     border: 1.5px solid var(--ink);
-    box-shadow: 10px 10px 0 var(--cream);
+    box-shadow: 10px 10px 0 var(--gold);
     transform: rotate(-1deg);
   }
-  .ragtime .role-card .label{color: var(--orange);}
+  .ragtime .role-card .label{color: var(--gold);}
   .ragtime .role-card h3{font-family:'Fraunces', serif; font-size: 38px; line-height: 1; margin: 16px 0 8px; color: var(--cream);}
-  .ragtime .role-card .who{font-family:'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--orange); margin-bottom: 18px;}
-  .ragtime .role-card .desc{font-size: 15px; color: #c9b9a3; line-height: 1.55;}
+  .ragtime .role-card .who{font-family:'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--gold-l); margin-bottom: 18px;}
+  .ragtime .role-card .desc{font-size: 15px; color: #c9bfa3; line-height: 1.55;}
 
   .ragtime .photo-frame{ background: var(--paper); box-shadow: 12px 12px 0 var(--ink); transform: rotate(-1.5deg); }
   .ragtime .photo-frame:nth-child(2){ transform: rotate(2deg); box-shadow: 12px 12px 0 var(--ink); }
-  .ragtime .photo-frame .img-wrap{ padding-bottom: 100%; background: linear-gradient(135deg, var(--ink), var(--plum)); }
+  .ragtime .photo-frame .img-wrap{ padding-bottom: 100%; background: linear-gradient(135deg, var(--ink), var(--forest-d)); }
   .ragtime .photo-frame .caption{ color: var(--ink); }
-  .ragtime .photo-frame .caption em{ color: var(--orange-d); }
+  .ragtime .photo-frame .caption em{ color: var(--forest); }
   .ragtime .stage-bottom{
     display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;
     margin-top: 70px; align-items: start;
   }
   @media (max-width:980px){ .ragtime .stage-bottom{grid-template-columns: 1fr; gap: 50px;} }
   @media (max-width:880px){ .ragtime .stage-grid{grid-template-columns: 1fr; gap: 40px;} }
+
+  /* ============== SERVICE & STORY (cream section) ============== */
+  .story-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items:start;
+  }
+  .story-grid .col h3{
+    font-family:'Fraunces', serif; font-size: 32px; line-height: 1.05;
+    letter-spacing: -0.01em; margin: 0 0 16px; color: var(--ink);
+  }
+  .story-grid .col h3 em{ color: var(--forest); font-style: italic; }
+  .story-grid .col p{ color: var(--ink-2); margin: 0 0 1em; font-size: 16.5px; line-height: 1.65; }
+  .story-grid .timeline{
+    border-left: 2px solid var(--gold); padding-left: 24px; margin-top: 8px;
+  }
+  .story-grid .ti{
+    margin-bottom: 22px; position: relative;
+  }
+  .story-grid .ti::before{
+    content:""; position:absolute; left:-31px; top:8px;
+    width:10px; height:10px; background: var(--gold); border-radius:50%;
+    border: 2px solid var(--cream);
+  }
+  .story-grid .ti .yr{
+    font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-d); margin-bottom: 4px;
+  }
+  .story-grid .ti .ev{
+    font-family:'Fraunces', serif; font-size: 19px; line-height: 1.25; color: var(--ink);
+  }
+  .story-grid .ti .ev span{ display:block; font-family:'Inter', sans-serif; font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+  @media (max-width:880px){ .story-grid{grid-template-columns: 1fr; gap: 40px;} }
 
   /* ============== CONTACT FOOTER ============== */
   footer{
@@ -463,25 +530,27 @@
     line-height: 0.92; letter-spacing: -0.025em; font-weight: 300;
     margin: 12px 0 50px; color: var(--cream);
   }
-  footer h2 em{font-style: italic; color: var(--orange); font-weight: 300;}
+  footer h2 em{font-style: italic; color: var(--gold-l); font-weight: 300;}
   footer .label{color: var(--gold);}
   footer .links-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap: 0;}
   footer .links-grid a{
     display:flex; justify-content: space-between; align-items: center;
-    padding: 26px 0; border-top: 1.5px solid #4a3a2e;
+    padding: 26px 0; border-top: 1.5px solid #2a4836;
     color: var(--cream);
     font-family:'Fraunces', serif; font-size: 26px; letter-spacing: -0.01em;
     transition: padding .25s ease, color .25s ease;
   }
-  footer .links-grid a:hover{padding-left: 16px; color: var(--orange);}
+  footer .links-grid a:hover{padding-left: 16px; color: var(--gold-l);}
   footer .links-grid a:nth-child(odd){padding-right: 30px;}
-  footer .links-grid a:nth-child(even){padding-left: 30px; border-left: 1.5px solid #4a3a2e;}
+  footer .links-grid a:nth-child(even){padding-left: 30px; border-left: 1.5px solid #2a4836;}
   footer .links-grid a .svc{font-family:'Space Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #b3a48a; font-weight: 400;}
   footer .colophon{
-    margin-top: 60px; padding-top: 24px; border-top: 1.5px solid #4a3a2e;
+    margin-top: 60px; padding-top: 24px; border-top: 1.5px solid #2a4836;
     display:flex; justify-content:space-between; gap: 20px; flex-wrap:wrap;
     font-family:'Space Mono', monospace; font-size: 11px; color: #b3a48a; letter-spacing: 0.1em; text-transform: uppercase;
   }
+  footer .colophon .mark-small{ display:flex; align-items:center; gap:10px; }
+  footer .colophon .mark-small svg{ width: 22px; height: 22px; color: var(--gold-l); }
   @media (max-width:760px){
     footer .links-grid{grid-template-columns: 1fr;}
     footer .links-grid a:nth-child(even){padding-left: 0; border-left: 0;}
@@ -491,16 +560,44 @@
 </head>
 <body>
 
+<!-- Reusable inline SVG mark via <symbol> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pd-mark" viewBox="0 0 400 400">
+    <polygon points="312,118 332,108 322,130" fill="#c9a227"/>
+    <polygon points="88,282 68,292 78,270" fill="#c9a227"/>
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <path d="M 200,80 A 120,120 0 0 1 320,200 A 120,120 0 0 1 200,320"/>
+      <path d="M 200,320 A 120,120 0 0 1 80,200 A 120,120 0 0 1 200,80"/>
+      <path d="M 200,40 L 200,86 Q 200,96 210,100 Q 222,104 222,116"/>
+      <path d="M 178,284 Q 178,296 190,300 Q 200,304 200,314 L 200,360"/>
+      <path d="M 200,200 q 4,-4 8,0 q 6,6 0,14 q -10,10 -22,0 q -16,-14 0,-32 q 22,-22 44,0 q 28,28 0,58 q -34,34 -68,0 q -40,-40 0,-82 q 46,-46 92,0"/>
+    </g>
+    <g fill="currentColor">
+      <circle cx="146" cy="232" r="6"/>
+      <circle cx="178" cy="252" r="6"/>
+      <circle cx="226" cy="252" r="6"/>
+      <circle cx="252" cy="220" r="6"/>
+      <circle cx="216" cy="146" r="6"/>
+      <circle cx="156" cy="166" r="6"/>
+    </g>
+  </symbol>
+</svg>
+
 <!-- ============================================== TOPBAR -->
 <div class="topbar">
   <div class="row">
-    <a class="brand" href="#top">Clifton <em>D.</em> Cameron</a>
+    <a class="brand" href="#top">
+      <svg class="mark" aria-hidden="true"><use href="#pd-mark"/></svg>
+      <span>Clifton <em>D.</em> Cameron</span>
+    </a>
     <nav>
       <a href="#about">About</a>
       <a href="#work">Work</a>
+      <a href="#partners">Partners</a>
       <a href="#watch">Watch</a>
       <a href="#writing">Writing</a>
       <a href="#stage">Stage</a>
+      <a href="#story">Story</a>
     </nav>
     <a class="pill" href="#contact">Get in touch ↘</a>
   </div>
@@ -514,8 +611,10 @@
     <span>Writer <span class="star">✦</span></span>
     <span>Stage Actor <span class="star">✦</span></span>
     <span>Multiphonics CV-2 <span class="star">✦</span></span>
+    <span>Pendulum Distinction <span class="star">✦</span></span>
     <span>Synth &amp; Software <span class="star">✦</span></span>
     <span>Serge Modular <span class="star">✦</span></span>
+    <span>U.S. Navy Veteran <span class="star">✦</span></span>
     <span>Ragtime <span class="star">✦</span></span>
     <span>dublab Archive <span class="star">✦</span></span>
     <!-- duplicate for seamless scroll -->
@@ -524,8 +623,10 @@
     <span>Writer <span class="star">✦</span></span>
     <span>Stage Actor <span class="star">✦</span></span>
     <span>Multiphonics CV-2 <span class="star">✦</span></span>
+    <span>Pendulum Distinction <span class="star">✦</span></span>
     <span>Synth &amp; Software <span class="star">✦</span></span>
     <span>Serge Modular <span class="star">✦</span></span>
+    <span>U.S. Navy Veteran <span class="star">✦</span></span>
     <span>Ragtime <span class="star">✦</span></span>
     <span>dublab Archive <span class="star">✦</span></span>
   </div>
@@ -546,8 +647,8 @@
         </h1>
         <p class="lede">
           A sound designer, modular synthesist, writer, and performer who moves between
-          <em>circuit</em> and <em>stage</em>, from voltage-controlled instruments at
-          Applied Acoustics Systems to the boards of Actors' Repertory Theatre.
+          <em>circuit</em> and <em>stage</em>. Founder of
+          <em>Pendulum Distinction</em> &mdash; narrating life through sound.
         </p>
         <div class="meta-line">
           <span class="dot"></span>
@@ -556,10 +657,8 @@
       </div>
 
       <div class="photo-stack">
-        <a class="badge" href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener" title="Sound designer for Multiphonics CV-2 by Applied Acoustics Systems">
-          <div class="ring"></div>
-          <div class="big">CV-2</div>
-          <div>Multiphonics<br/>Sound Design</div>
+        <a class="logo-badge" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener" title="Pendulum Distinction · Narrating Life through Sound">
+          <svg aria-hidden="true"><use href="#pd-mark"/></svg>
         </a>
         <div class="photo-frame">
           <div class="img-wrap">
@@ -575,7 +674,7 @@
   </div>
 </header>
 
-<!-- ============================================== ABOUT (DARK) -->
+<!-- ============================================== ABOUT (DARK FOREST) -->
 <section class="dark" id="about">
   <div class="container">
     <div class="section-mark">
@@ -588,41 +687,49 @@
       <div class="photo-stack">
         <div class="photo-frame">
           <div class="img-wrap">
-            <img src="clifton-namm.jpg" alt="Clifton at the INA-GRM booth" loading="lazy" />
+            <img src="clifton-namm.jpg" alt="Clifton on the trade-show floor" loading="lazy" />
           </div>
           <div class="caption" style="color:var(--ink);">
             <span>On the Floor</span>
-            <em>NAMM · INA-GRM</em>
+            <em>NAMM · Synthplex</em>
           </div>
         </div>
       </div>
       <div class="body">
         <p class="first">
-          In his own words: a <em>writer, avant-garde sound composer, and painter</em>
-          with broad expertise in computers, analog synthesizers, and experimental motion graphics.
+          Clifton is a <em>sound designer, composer, writer, and lifelong student of the instrument</em>
+          &mdash; a practice that has carried him from the Pacific aboard the USS Essex to the
+          NAMM floor, from the Continuum to the Serge, from a Wells Fargo desk to a stage in Simi Valley.
         </p>
         <p>
-          As sound designer for <a href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">Multiphonics CV-2</a>,
-          Clifton has shaped the voice of a flagship modular software environment used by
-          producers and composers around the world. As a contributor to
-          <a href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">Synth and Software</a>,
-          he writes about the instruments and ideas defining contemporary electronic music.
+          He is the sound designer behind
+          <a href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">Multiphonics CV-2</a>
+          for Applied Acoustics Systems, a Business Development Manager and demonstrator for
+          Haken Audio's Continuum, and a contributing writer at
+          <a href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">Synth and Software</a>.
+          Through his label and studio <em>Pendulum Distinction</em> he composes, teaches, performs,
+          and collaborates with instrument designers across three continents.
         </p>
         <p>
-          In 2025 he made his stage debut as Booker T. Washington in <em>Ragtime</em> with
-          Actors' Repertory Theatre of Simi, joining a full cast and orchestra at the Simi
-          Valley Cultural Arts Center for one of the musical's most historically charged roles.
-          In live electronic performance he has appeared with custom Serge Modular systems at
-          venues including Coaxial Arts Foundation in Los Angeles, with early work preserved
-          in the <a href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">dublab radio archive</a>.
+          In 2025 he made his stage debut as Booker T. Washington in <em>Ragtime</em> with Actors'
+          Repertory Theatre of Simi at the Simi Valley Cultural Arts Center. Earlier creative work
+          is preserved in the <a href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">dublab radio archive</a>
+          (an all-vinyl mix recorded for Carlos Niño in 2002).
+        </p>
+        <p>
+          Before all of it: a U.S. Navy veteran (Operations Specialist, USS Essex / USS Belleau-Wood,
+          1997&ndash;2001), Bachelor's from Cal State Fullerton, Associate's in Business Administration
+          from Citrus College, and an enduring belief that the right tool, in conversation with a
+          patient ear, can carry a room.
         </p>
         <div class="about-stickers">
-          <span class="sticker">Sound Composer</span>
+          <span class="sticker">Sound Designer</span>
           <span class="sticker invert">Modular ⚡</span>
           <span class="sticker">Writer</span>
-          <span class="sticker">Painter</span>
-          <span class="sticker">Motion Graphics</span>
+          <span class="sticker">Composer</span>
+          <span class="sticker">Educator</span>
           <span class="sticker">Stage</span>
+          <span class="sticker">Navy Veteran</span>
         </div>
       </div>
     </div>
@@ -642,9 +749,9 @@
       <article class="card feat">
         <span class="role-tag">Sound Design</span>
         <h3>Multiphonics CV-2</h3>
-        <p>Modular synthesis software environment from Applied Acoustics Systems.
-          A virtual modular built around control voltage thinking, with sound design
-          and patch contributions for the flagship release.</p>
+        <p>Modular synthesis software environment from Applied Acoustics Systems &mdash;
+          a virtual modular built around control voltage thinking. Sound design and patch
+          contributions across versions 1&ndash;3 of the flagship release.</p>
         <div class="meta">
           <span class="where">Applied Acoustics · Montréal</span>
           <a class="go" href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">View →</a>
@@ -662,11 +769,11 @@
         </div>
       </article>
 
-      <article class="card half teal-card">
+      <article class="card half moss-card">
         <span class="role-tag">Performance</span>
         <h3>A Night of Serge Modular</h3>
-        <p>Live patch-based improvisation on a custom two-panel Serge system with
-          fellow synthesists at Coaxial Arts Foundation in Los Angeles.</p>
+        <p>Live patch-based improvisation on a custom Serge system at Coaxial Arts Foundation
+          in Los Angeles, alongside Prism Circuits.</p>
         <div class="meta">
           <span class="where">Coaxial Arts · Dec 2023</span>
           <a class="go" href="https://www.youtube.com/watch?v=isn1i_WDn_w&amp;t=8209s" target="_blank" rel="noopener">Watch →</a>
@@ -674,10 +781,32 @@
       </article>
 
       <article class="card half">
+        <span class="role-tag">Hardware</span>
+        <h3>Solar System</h3>
+        <p>An all-analog hardware modular instrument under development with Wolfgang Michalowicz
+          for Pendulum Distinction &mdash; with a contour generator awaiting patent.</p>
+        <div class="meta">
+          <span class="where">Pendulum Distinction · in progress</span>
+          <a class="go" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener">Follow →</a>
+        </div>
+      </article>
+
+      <article class="card half">
+        <span class="role-tag">Industry</span>
+        <h3>Haken Audio · Continuum</h3>
+        <p>Business Development Manager and demonstrator for the Haken Continuum &mdash;
+          presenting the Eagan Matrix synthesis engine at NAMM and around the world.</p>
+        <div class="meta">
+          <span class="where">Urbana-Champaign / Worldwide</span>
+          <a class="go" href="https://www.hakenaudio.com" target="_blank" rel="noopener">Visit →</a>
+        </div>
+      </article>
+
+      <article class="card half">
         <span class="role-tag">Archive</span>
         <h3>Unyousual: The Coincidence</h3>
-        <p>Early creative work preserved in the dublab radio archive: a 2002 broadcast
-          titled "The Patron of the Art" from the long-running Unyousual series.</p>
+        <p>An all-vinyl mix recorded for Carlos Niño at dublab in 2002 &mdash; preserved in
+          the station's archive as part of the long-running Unyousual series.</p>
         <div class="meta">
           <span class="where">dublab.com · 2002</span>
           <a class="go" href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">Listen →</a>
@@ -687,11 +816,105 @@
   </div>
 </section>
 
+<!-- ============================================== PARTNERS / COLLABORATIONS -->
+<section id="partners">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">03</span>
+      <span class="label">Partnerships &amp; Collaborations</span>
+    </div>
+    <h2>Three decades inside the <em>instrument</em> world.</h2>
+    <p class="partners-intro">
+      Brand ambassador, beta tester, sound designer, and demonstrator for builders of
+      synthesizers, software, and acoustic instruments &mdash; from Los Angeles to Berlin,
+      Montréal, Grenoble, Sydney, and beyond.
+    </p>
+
+    <div class="partners">
+      <div class="partner">
+        <div class="role">Sound Design</div>
+        <div class="name">Applied Acoustics Systems</div>
+        <div class="where">Multiphonics CV-2 · Chromaphone · Montréal</div>
+      </div>
+      <div class="partner">
+        <div class="role">Brand Ambassador</div>
+        <div class="name">Elby Designs</div>
+        <div class="where">EuroSerge &amp; modular instruments · Australia</div>
+      </div>
+      <div class="partner">
+        <div class="role">Brand Ambassador</div>
+        <div class="name">CG Products</div>
+        <div class="where">Christian Günther modular · Germany</div>
+      </div>
+      <div class="partner">
+        <div class="role">Business Development</div>
+        <div class="name">Haken Audio</div>
+        <div class="where">Continuum &amp; Eagan Matrix · Urbana-Champaign</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta &amp; Consulting</div>
+        <div class="name">Cherry Audio</div>
+        <div class="where">Voltage Modular · CA2600 · Mark Barton</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta Testing</div>
+        <div class="name">GForce Software</div>
+        <div class="where">Vintage synthesizer emulations · UK</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta Testing</div>
+        <div class="name">XILS Lab</div>
+        <div class="where">Analog DSP simulations · Grenoble, France</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta Testing</div>
+        <div class="name">Ohm Force</div>
+        <div class="where">Plugin design · Paris, France</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta &amp; Support</div>
+        <div class="name">Fuse Audio Labs</div>
+        <div class="where">fuseaudiolabs.com</div>
+      </div>
+      <div class="partner">
+        <div class="role">Collaborator</div>
+        <div class="name">Audio Modeling</div>
+        <div class="where">SWAM physical-modeling instruments</div>
+      </div>
+      <div class="partner">
+        <div class="role">Demonstrator</div>
+        <div class="name">Symbolic Sound · Kyma</div>
+        <div class="where">Computer music systems</div>
+      </div>
+      <div class="partner">
+        <div class="role">Demonstrator</div>
+        <div class="name">Cycling '74</div>
+        <div class="where">Max/MSP · M · featured at debut Expo</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta Testing</div>
+        <div class="name">TX Modular · SuperCollider</div>
+        <div class="where">Paul Miller · Palemoonrising · UK</div>
+      </div>
+      <div class="partner">
+        <div class="role">Beta Testing</div>
+        <div class="name">Giorgio Sancristoforo</div>
+        <div class="where">Berna and a dozen+ instruments</div>
+      </div>
+      <div class="partner">
+        <div class="role">Co-creator</div>
+        <div class="name">Solar System</div>
+        <div class="where">Hardware analog modular · Pendulum Distinction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================== WATCH -->
 <section id="watch">
   <div class="container">
     <div class="section-mark">
-      <span class="num">03</span>
+      <span class="num">04</span>
       <span class="label">Watch &amp; Listen</span>
     </div>
     <h2>Performances, <em>demos,</em> conversations.</h2>
@@ -791,8 +1014,8 @@
           <div class="play">▶</div>
         </div>
         <div class="meta">
-          <div class="tag">Music · 2003</div>
-          <h4>Quintessential: Influenced By Intensity</h4>
+          <div class="tag">Music · Re-release</div>
+          <h4>Influenced By Intensity</h4>
         </div>
       </article>
 
@@ -809,7 +1032,7 @@
 
       <article class="v">
         <a class="card-link" href="https://vimeo.com/channels/1111304/235685924" target="_blank" rel="noopener" aria-label="Selected work on Vimeo"></a>
-        <div class="thumb" style="background:linear-gradient(135deg, var(--orange), var(--orange-d)); display:flex; align-items:center; justify-content:center;">
+        <div class="thumb" style="background:linear-gradient(135deg, var(--forest), var(--forest-d)); display:flex; align-items:center; justify-content:center;">
           <div class="play">▶</div>
         </div>
         <div class="meta">
@@ -820,7 +1043,7 @@
 
       <article class="v">
         <a class="card-link" href="https://www.youtube.com/@pendulumdistinction" target="_blank" rel="noopener" aria-label="@pendulumdistinction"></a>
-        <div class="thumb" style="background:linear-gradient(135deg, var(--teal), var(--ink)); display:flex; align-items:center; justify-content:center;">
+        <div class="thumb" style="background:linear-gradient(135deg, var(--moss), var(--ink)); display:flex; align-items:center; justify-content:center;">
           <div class="play">▶</div>
         </div>
         <div class="meta">
@@ -836,7 +1059,7 @@
 <section id="writing">
   <div class="container">
     <div class="section-mark">
-      <span class="num">04</span>
+      <span class="num">05</span>
       <span class="label">Writing &amp; Press</span>
     </div>
     <h2>Words about <em>instruments</em> and the people who make them.</h2>
@@ -862,9 +1085,17 @@
         <div class="when">dublab</div>
         <div class="what">
           Unyousual: The Patron of the Art, The Coincidence (2002)
-          <em>Early radio archive piece preserved in the dublab library.</em>
+          <em>An all-vinyl mix recorded for Carlos Niño, preserved in the dublab archive.</em>
         </div>
         <a class="read" href="https://www.dublab.com/archive/unyousual-the-patron-of-the-art-the-coincidence-2002" target="_blank" rel="noopener">Listen →</a>
+      </div>
+      <div class="row">
+        <div class="when">In progress</div>
+        <div class="what">
+          The Anatomy of a Human Costume
+          <em>A book in progress &mdash; the third volume from a writer with two earlier collections (<em style="font-style:italic">Duplicate Affinity Energy</em>, <em style="font-style:italic">Human Animation</em>).</em>
+        </div>
+        <a class="read" href="#contact">Inquire →</a>
       </div>
       <div class="row">
         <div class="when">LinkedIn</div>
@@ -878,18 +1109,18 @@
   </div>
 </section>
 
-<!-- ============================================== STAGE (ORANGE) -->
+<!-- ============================================== STAGE (FOREST) -->
 <section class="ragtime" id="stage">
   <div class="container">
     <div class="section-mark">
-      <span class="num">05</span>
+      <span class="num">06</span>
       <span class="label">On Stage</span>
     </div>
     <h2>From <em>Ragtime</em> to the <span class="underline">modular rig.</span></h2>
 
     <div class="stage-grid">
       <div>
-        <p class="pull">"Honored to be a part of an incredible cast in the legendary musical while playing Booker T. Washington in <em style="font-style:italic">Ragtime</em>." <span style="display:block; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-style:normal; margin-top:14px; color:var(--ink);">Cast bio · ARTS Ragtime program</span></p>
+        <p class="pull">"Honored to be a part of an incredible cast in the legendary musical while playing Booker T. Washington in <em style="font-style:italic">Ragtime</em>." <span style="display:block; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-style:normal; margin-top:14px; color:var(--gold-l);">Cast bio · ARTS Ragtime program</span></p>
         <div class="body">
           <p>
             In 2025 Clifton made his stage debut as Booker T. Washington in Stephen Flaherty
@@ -901,7 +1132,7 @@
             Live electronic performance is its own kind of theater. Whether patching a Serge
             at Coaxial Arts Foundation, demonstrating Haken Audio's Continuum on the NAMM
             floor, or appearing at EoWave's events, his performances treat each instrument
-            as a collaborator rather than a tool. An attitude that carries through the
+            as a collaborator rather than a tool &mdash; an attitude that carries through the
             writing and the sound design alike.
           </p>
         </div>
@@ -941,14 +1172,100 @@
         </div>
       </aside>
       <aside class="role-card" style="margin-top:20px; background: var(--cream); color: var(--ink); box-shadow: 10px 10px 0 var(--ink);">
-        <span class="label" style="color:var(--orange-d);">Press</span>
+        <span class="label" style="color: var(--gold-d);">Press</span>
         <h3 style="color:var(--ink);">An American Tale</h3>
-        <div class="who" style="color:var(--orange-d);">VC Reporter feature</div>
+        <div class="who" style="color: var(--forest);">VC Reporter feature</div>
         <div class="desc" style="color:var(--ink-2);">
           Local press coverage of the production:
-          <a href="https://www.vcreporter.com/art_and_culture/american-tale-actors-repertory-theatre-of-simi-presents-ragtime/article_c5934922-fa1d-11ef-9c98-5fd3b45f6e02.html" target="_blank" rel="noopener" style="color:var(--orange-d); border-bottom:1px solid var(--orange-d);">read the article</a>.
+          <a href="https://www.vcreporter.com/art_and_culture/american-tale-actors-repertory-theatre-of-simi-presents-ragtime/article_c5934922-fa1d-11ef-9c98-5fd3b45f6e02.html" target="_blank" rel="noopener" style="color: var(--forest); border-bottom:1px solid var(--forest);">read the article</a>.
         </div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== STORY / TIMELINE -->
+<section id="story">
+  <div class="container">
+    <div class="section-mark">
+      <span class="num">07</span>
+      <span class="label">Story</span>
+    </div>
+    <h2>A path that <em>started</em> at sea.</h2>
+
+    <div class="story-grid">
+      <div class="col">
+        <h3>Service, then sound.</h3>
+        <p>
+          Before the studio there was the U.S. Navy. Clifton served as an Operations Specialist
+          aboard the USS Essex (LHD-2) and USS Belleau-Wood (LHA-3) from 1997 to 2001, working
+          radar, navigation, and communications, and graduating top of his boot-camp division
+          in Great Lakes, Illinois.
+        </p>
+        <p>
+          The years that followed traced a winding line through finance, technology, and
+          international peace work &mdash; each role sharpening the listening, account-management,
+          and teaching skills that now define the way he works with instrument designers and clients.
+        </p>
+        <h3 style="margin-top:36px;">Education.</h3>
+        <p>
+          Bachelor's, Cal State Fullerton · Associate's in Business Administration, Citrus College
+          · U.S. Navy Operations Specialist Training (FTC C School, Great Lakes, IL) and
+          Communications Specialist Training (NTTC A School, Meridian, MS).
+        </p>
+      </div>
+      <div class="col">
+        <div class="timeline">
+          <div class="ti">
+            <div class="yr">1997 – 2001</div>
+            <div class="ev">U.S. Navy · USS Essex / USS Belleau-Wood<br/>
+              <span>Operations &amp; Communications Specialist · Sasebo, Japan</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2001</div>
+            <div class="ev">Pendulum Distinction is born
+              <span>The label and studio identity that gathers everything that follows.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2001 – 2008</div>
+            <div class="ev">INX Services · Executive Director / Operations Supervisor
+              <span>Corporate partnerships with Nordstrom, Target, Wal-Mart, and Apple.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2001 – 2005</div>
+            <div class="ev">Wells Fargo · Business Account Manager
+              <span>Helped drive a desk to $41.3M in 2003.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2008</div>
+            <div class="ev">Global Peace Exchange · Rwanda Program
+              <span>Assistant Director · taught English and international engagement in Butare and Gitarama.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2010s</div>
+            <div class="ev">Haken Audio · Business Development Manager
+              <span>Demonstrating the Continuum and Eagan Matrix worldwide.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2017 – 2025</div>
+            <div class="ev">Superbooth · NAMM · Synthplex · ContinuuCon
+              <span>Brand ambassador and demonstrator across Berlin, Anaheim, Burbank, Asheville, and Paris.</span>
+            </div>
+          </div>
+          <div class="ti">
+            <div class="yr">2025</div>
+            <div class="ev">Booker T. Washington in <em>Ragtime</em>
+              <span>Stage debut at the Simi Valley Cultural Arts Center.</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -956,14 +1273,17 @@
 <!-- ============================================== FOOTER / CONTACT -->
 <footer id="contact">
   <div class="container">
-    <span class="label">06 · Get In Touch</span>
+    <span class="label">08 · Get In Touch</span>
     <h2>Let's make some <em>noise.</em></h2>
-    <p style="font-size:18px; max-width:620px; color:#c9b9a3; margin: 0 0 60px;">
-      Open to sound design, scoring, performance, editorial collaboration, and the occasional
-      role on stage. The best routes are below.
+    <p style="font-size:18px; max-width:620px; color:#c9bfa3; margin: 0 0 60px;">
+      Open to sound design, scoring, performance, editorial collaboration, brand partnerships,
+      teaching, and the occasional role on stage. The best routes are below.
     </p>
 
     <div class="links-grid">
+      <a href="mailto:cliftoncameron@gmail.com">
+        Email <span class="svc">cliftoncameron@gmail.com ↗</span>
+      </a>
       <a href="https://www.linkedin.com/in/clifton-develle-cameron-855424275" target="_blank" rel="noopener">
         LinkedIn <span class="svc">profile ↗</span>
       </a>
@@ -976,10 +1296,16 @@
       <a href="https://synthandsoftware.com/author/cliftondevellecameron/" target="_blank" rel="noopener">
         Synth &amp; Software <span class="svc">author archive ↗</span>
       </a>
+      <a href="https://www.applied-acoustics.com/multiphonics-cv-2/" target="_blank" rel="noopener">
+        Applied Acoustics <span class="svc">Multiphonics CV-2 ↗</span>
+      </a>
     </div>
 
     <div class="colophon">
-      <span>© Clifton Develle Cameron</span>
+      <span class="mark-small">
+        <svg aria-hidden="true"><use href="#pd-mark"/></svg>
+        © Pendulum Distinction · Clifton Develle Cameron
+      </span>
       <span>Sound · voltage · voice · stage</span>
     </div>
   </div>
